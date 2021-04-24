@@ -21,6 +21,9 @@
 </table>
 <h2>New book</h2>
 <%= form_with model:@book, local:true do |f| %>
+  <% if @book.errors.any? %>
+    <h3>入力した内容にエラーが1件あります</h3>
+  <% end %>
   <div class="actions">
     <label for="book_title">Title</label>
     <%= f.text_field :title, class: "book_title" %>
